@@ -23,13 +23,9 @@ os.chdir('C:\\Users\\admin\\Desktop')
 o = subprocess.check_output("powershell.exe -noexit Get-Filehash kali-linux-2016.2-amd64.iso", shell=True)
 print (o)
 
-"""Entrer des Hashes"""
-k = input("\n\nEntrez SHA256 ci-dessus : ")
-k = k.upper()
-u = input("\n\nEntrez SHA256 officiel : ")
-u = u.upper()
-
-
+"""Entrer les Hashes"""
+k = input("\n\nEntrez SHA256 ci-dessus : ").upper()
+u = input("\n\nEntrez SHA256 officiel : ").upper()
 
 """Fonction compare"""
 
