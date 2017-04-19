@@ -4,7 +4,7 @@
 
 import os
 import subprocess
-
+import time
 
 print ("\n")
 print ("\t#####################################################################")
@@ -16,7 +16,7 @@ print ("\t#                                                                   #"
 print ("\t#                                                                   #")
 print ("\t#####################################################################")
 print ("\n")
-print (".....En Attente du SHA256zum :) Merci")
+print (".....En Attente du SHA256sum :) Merci")
 
 """Commande PowerShell"""
 os.chdir('C:\\Users\\admin\\Desktop')
@@ -24,19 +24,25 @@ o = subprocess.check_output("powershell.exe -noexit Get-Filehash kali-linux-2016
 print (o)
 
 """Entrer des Hashes"""
-k = input("Entrez SHA256 ci-dessus : ")
-u = input("Entrez SHA256 site officiel : ")
+k = input("\n\nEntrez SHA256 ci-dessus : ")
+k = k.upper()
+u = input("\n\nEntrez SHA256 officiel : ")
+u = u.upper()
+
 
 
 """Fonction compare"""
 
 def compare_sum():
     if u == k :
-        print ("LE LOGICIEL EST SAFE.")
+        print ("\n\nLE LOGICIEL EST SAFE.")
     else :
-        print ("LE LOGICIEL EST CORROMPU.")
+        print ("\n\nLE LOGICIEL EST CORROMPU.")
         os.remove('C:\\Users\\admin\\Desktop\\kali-linux-2016.2-amd64.iso')
-        print ("DELETE")
+        print ("\n\nDELETE......")
+        time.sleep(2.0)
+        print (".........END")
+        
         
 
 """VERDICT"""
